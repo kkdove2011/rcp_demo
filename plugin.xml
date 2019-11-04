@@ -1,45 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-
    <extension point="org.eclipse.ui.commands">
-      <command name="Sample Command" id="rcp_demo.commands.sampleCommand"/>
+      <command name="菜单DEMO" id="rcp_demo.commands.TestCommand"/>
    </extension>
    <extension point="org.eclipse.ui.handlers">
-      <handler class="rcp_demo.handlers.SampleHandler" commandId="rcp_demo.commands.sampleCommand"/>
+      <handler class="rcp_demo.KHandler" commandId="rcp_demo.commands.TestCommand"/>
    </extension>
    <extension point="org.eclipse.ui.bindings">
       <key
-            commandId="rcp_demo.commands.sampleCommand"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            contextId="org.eclipse.ui.contexts.window"
-            sequence="M1+6">
+            commandId="rcp_demo.commands.TestCommand"
+            schemeId="com.teamcenter.rac.scheme"
+            sequence="M3+D">
       </key>
    </extension>
    <extension point="org.eclipse.ui.menus">
       <menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=additions">
-         <menu
-               id="rcp_demo.menus.sampleMenu"
-               label="Sample Menu"
-               mnemonic="M">
-            <command
-                  commandId="rcp_demo.commands.sampleCommand"
-                  id="rcp_demo.menus.sampleCommand"
-                  mnemonic="S">
-            </command>
+         <menu id="rcp_demo.menus.demo" label="RCPDEMO" mnemonic="M">
+         	<separator visible="true" name="sp0"/>
+         	<menu id="rcp_demo.menus.demo.api" label="API" mnemonic="A"/>
+         	<menu id="rcp_demo.menus.demo.ui" label="UI" mnemonic="B"/>
+         	<separator visible="true" name="sp1"/>
+         	<separator visible="true" name="sp2"/>
          </menu>
       </menuContribution>
-      <menuContribution
-            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
-         <toolbar
-               id="rcp_demo.toolbars.sampleToolbar">
+      <menuContribution locationURI="menu:rcp_demo.menus.demo.api?after=additions">
+      	<command commandId="rcp_demo.commands.TestCommand" id="rcp_demo.menus.demo.api.test0"/>
+      </menuContribution>
+      <menuContribution locationURI="menu:rcp_demo.menus.demo.ui?after=additions">
+      	<command commandId="rcp_demo.commands.TestCommand" id="rcp_demo.menus.demo.ui.test0"/>
+      </menuContribution>
+      <menuContribution locationURI="menu:rcp_demo.menus.demo?after=additions">
+      	<command commandId="rcp_demo.commands.TestCommand" id="rcp_demo.menus.demo.test0"/>
+      </menuContribution>
+      <menuContribution locationURI="menu:rcp_demo.menus.demo?after=sp1">
+      	<command name="菜单DEMO[sp1]" commandId="rcp_demo.commands.TestCommand" id="rcp_demo.menus.demo.test1"/>
+      </menuContribution>
+      <menuContribution locationURI="menu:rcp_demo.menus.demo?after=sp2">
+      	<command name="菜单DEMO[sp2]" commandId="rcp_demo.commands.TestCommand" id="rcp_demo.menus.demo.test2"/>
+      </menuContribution>
+      
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar id="rcp_demo.toolbars.sampleToolbar">
             <command
                   id="rcp_demo.toolbars.sampleCommand"
-                  commandId="rcp_demo.commands.sampleCommand"
+                  commandId="rcp_demo.commands.TestCommand"
                   icon="icons/sample.png"
                   tooltip="Say hello world">
             </command>
          </toolbar>
+      </menuContribution>
+      
+      <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command commandId="rcp_demo.commands.TestCommand" id="rcp_demo.menus.demo.popup.test0"/>
       </menuContribution>
    </extension>
 
