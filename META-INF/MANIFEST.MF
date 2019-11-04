@@ -6,14 +6,14 @@ Bundle-Version: 1.0.0
 Bundle-Activator: rcp_demo.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- com.teamcenter.rac.aifrcp;bundle-version="12000.1.0",
- com.teamcenter.rac.common;bundle-version="12000.1.0",
- com.teamcenter.rac.external;bundle-version="12000.1.0",
- com.teamcenter.rac.kernel;bundle-version="12000.1.0",
- com.teamcenter.rac.tcapps;bundle-version="12000.1.0",
- com.teamcenter.rac.ui;bundle-version="12000.1.0",
- com.teamcenter.rac.ui.commands;bundle-version="12000.1.0",
- com.teamcenter.rac.util;bundle-version="12000.1.0"
+ com.teamcenter.rac.aifrcp,
+ com.teamcenter.rac.common,
+ com.teamcenter.rac.external,
+ com.teamcenter.rac.kernel,
+ com.teamcenter.rac.tcapps,
+ com.teamcenter.rac.ui,
+ com.teamcenter.rac.ui.commands,
+ com.teamcenter.rac.util
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: rcp_demo
 Bundle-ActivationPolicy: lazy
