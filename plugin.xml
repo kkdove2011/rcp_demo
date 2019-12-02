@@ -34,10 +34,10 @@
       	<command commandId="rcp_demo.commands.TestCommand" id="rcp_demo.menus.demo.test0"/>
       </menuContribution>
       <menuContribution locationURI="menu:rcp_demo.menus.demo?after=sp1">
-      	<command name="菜单DEMO[sp1]" commandId="rcp_demo.commands.TestCommand" id="rcp_demo.menus.demo.test1"/>
+      	<command commandId="rcp_demo.commands.TestCommand" id="rcp_demo.menus.demo.test1"/>
       </menuContribution>
       <menuContribution locationURI="menu:rcp_demo.menus.demo?after=sp2">
-      	<command name="菜单DEMO[sp2]" commandId="rcp_demo.commands.TestCommand" id="rcp_demo.menus.demo.test2"/>
+      	<command commandId="rcp_demo.commands.TestCommand" id="rcp_demo.menus.demo.test2"/>
       </menuContribution>
       
       <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
